@@ -1,5 +1,6 @@
 # sphinx.ext.search.zh_TW
 Sphinx Traditional Chinese search extension
+
 It forks from [bosbyj/sphinx.search.zh_CN](https://github.com/bosbyj/sphinx.search.zh_CN)
 
 ## Installation
