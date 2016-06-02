@@ -244,12 +244,11 @@ class SearchChinese(SearchLanguage):
     latin1_letters = re.compile(r'\w+(?u)[\u0000-\u00ff]')
 
     def init(self, options):
-    	if JIEBA:
+        if JIEBA:
             dict = options.get('dict')
             if os.path.isfile(dict):
-            	jieba.set_dictionary(dict)
-                print
-            	print "Dictionary path：", dict
+                jieba.set_dictionary(dict)
+                print("Dictionary path：", dict)
 
         if CSTEMMER:
             class Stemmer(CStemmer):
@@ -274,7 +273,7 @@ class SearchChinese(SearchLanguage):
         self.stemmer = Stemmer()
 
     def split(self, input):
-    	if JIEBA:
+        if JIEBA:
             chinese = list(jieba.cut_for_search(input))
 
         latin1 = self.latin1_letters.findall(input)
